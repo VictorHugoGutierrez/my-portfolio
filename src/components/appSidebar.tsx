@@ -25,46 +25,55 @@ const data = {
       title: "Sobre",
       url: "about",
       icon: User,
+      isActive: true,
     },
     {
       title: "Conhecimentos",
       url: "knowledge",
       icon: Brain,
+      isActive: true,
     },
     {
       title: "Projetos",
       url: "projects",
       icon: NotebookPen,
+      isActive: true,
       items: [
         {
           title: "API Alô Doctor",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/api-alodoctor",
+          id: "projects",
         },
         {
           title: "Web Alô Doctor",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/web-alodoctor",
+          id: "projects",
         },
         {
           title: "To Do List",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/ToDoList",
+          id: "projects",
         },
         {
           title: "NLW AI",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/NLW-AI",
+          id: "projects",
         },
         {
           title: "Alura Books",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/AluraBooks",
+          id: "projects",
         },
         {
           title: "Next CRUD",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/next-crud",
+          id: "projects",
         },
       ],
     },
@@ -72,6 +81,7 @@ const data = {
       title: "Contato",
       url: "contact",
       icon: MessageCircleMore,
+      isActive: true,
       items: [
         {
           title: "Email",
@@ -105,46 +115,55 @@ const data = {
       title: "About",
       url: "about",
       icon: User,
+      isActive: true,
     },
     {
       title: "Knowledge",
       url: "knowledge",
       icon: Brain,
+      isActive: true,
     },
     {
       title: "Projects",
       url: "projects",
       icon: NotebookPen,
+      isActive: true,
       items: [
         {
           title: "API Alô Doctor",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/api-alodoctor",
+          id: "projects",
         },
         {
           title: "Web Alô Doctor",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/web-alodoctor",
+          id: "projects",
         },
         {
           title: "To Do List",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/ToDoList",
+          id: "projects",
         },
         {
           title: "NLW AI",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/NLW-AI",
+          id: "projects",
         },
         {
           title: "Alura Books",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/AluraBooks",
+          id: "projects",
         },
         {
           title: "Next CRUD",
           openNewPage: true,
           url: "https://github.com/VictorHugoGutierrez/next-crud",
+          id: "projects",
         },
       ],
     },
@@ -152,6 +171,7 @@ const data = {
       title: "Contact",
       url: "contact",
       icon: MessageCircleMore,
+      isActive: true,
       items: [
         {
           title: "E-mail",

@@ -19,8 +19,9 @@ export function NavMain({
     title: string;
     url: string;
     icon?: LucideIcon;
-    isActive?: boolean;
+    isActive: boolean;
     items?: {
+      isActive?: boolean | undefined;
       title: string;
       url: string;
       openNewPage?: boolean;
