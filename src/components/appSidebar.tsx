@@ -236,7 +236,7 @@ export function AppSidebar({
               : "flex flex-col gap-y-1"
           }`}
         >
-          <ModeToggle />
+          <ModeToggle language={language} />
           <LanguageBtn language={language} onClick={onClick} />
         </div>
       </SidebarFooter>

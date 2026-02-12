@@ -61,9 +61,7 @@ export default function Page() {
               : "HI, I'M VICTOR HUGO"
           }
           textSubTitle={
-            portugueseVisible
-              ? "Desenvolvedor de Sistemas."
-              : "System Developer."
+            portugueseVisible ? "Desenvolvedor .NET" : ".NET Developer"
           }
         />
         <About language={portugueseVisible ? "Portuguese" : "English"} />

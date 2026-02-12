@@ -64,7 +64,7 @@ export default function Projects(props: ProjectProps) {
 
   return (
     <div
-      className="flex min-h-screen items-center justify-center px-4"
+      className="flex min-h-screen items-center justify-center px-4 py-20"
       id="projects"
     >
       <div className="container mx-auto">

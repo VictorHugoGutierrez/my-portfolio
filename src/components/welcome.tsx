@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import victorImage from "@/images/victor.png";
+import victorImage from "@/images/victor.jpeg";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import { Button } from "./ui/button";
 
@@ -28,12 +28,12 @@ export default function Welcome(props: WelcomeProps) {
     const titleTimeout = setTimeout(() => {
       if (currentTitleIndex < props.textTitle.length) {
         setCurrentTitle(
-          (prevText) => prevText + props.textTitle[currentTitleIndex]
+          (prevText) => prevText + props.textTitle[currentTitleIndex],
         );
         setCurrentTitleIndex((prevIndex) => prevIndex + 1);
       } else if (currentSubTitleIndex < props.textSubTitle.length) {
         setCurrentSubTitle(
-          (prevText) => prevText + props.textSubTitle[currentSubTitleIndex]
+          (prevText) => prevText + props.textSubTitle[currentSubTitleIndex],
         );
         setCurrentSubTitleIndex((prevIndex) => prevIndex + 1);
       }
@@ -50,7 +50,7 @@ export default function Welcome(props: WelcomeProps) {
 
   return (
     <div
-      className="flex h-screen flex-col items-center md:justify-center md:flex-row"
+      className="flex min-h-screen flex-col items-center md:justify-center md:flex-row"
       id="startPage"
     >
       <div className="flex h-1/2 my-28 md:my-0 items-center justify-center flex-col md:flex-row">
@@ -72,9 +72,15 @@ export default function Welcome(props: WelcomeProps) {
           </div>
           <div className="my-3 flex space-x-4 font-semibold">
             <Button>
-              <a download href="/victorCV.pdf" target="_blank">
-                {props.language === "Portuguese" ? "Baixar CV" : "Download CV"}
-              </a>
+              {props.language === "Portuguese" ? (
+                <a download href="/victorCVBR.pdf" target="_blank">
+                  Baixar CV
+                </a>
+              ) : (
+                <a download href="/victorCVEN.pdf" target="_blank">
+                  Download CV
+                </a>
+              )}
             </Button>
             <Button>
               <a

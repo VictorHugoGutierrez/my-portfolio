@@ -34,7 +34,7 @@ export default function Knowledge(props: KnowledgeProps) {
     "React.js",
     "Next.js",
     "C#",
-    ".NET Core",
+    ".NET",
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function Knowledge(props: KnowledgeProps) {
         <h1 className="flex justify-center text-3xl font-bold md:text-5xl my-4">
           {props.language === "Portuguese" ? "Conhecimentos" : "Knowledge"}
         </h1>
-        <div className="mx-2 my-2 flex flex-wrap justify-center gap-4 md:justify-start md:gap-7">
+        <div className="mx-2 my-2 flex flex-wrap justify-center gap-4 md:justify-center md:gap-7">
           {icons.map((icon, index) => (
             <Card
               key={index}

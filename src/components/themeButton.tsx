@@ -12,7 +12,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function ModeToggle() {
+interface ModeToggleProps {
+  language: string;
+}
+
+export default function ModeToggle(props: ModeToggleProps) {
   const { setTheme } = useTheme();
 
   return (
@@ -26,13 +30,13 @@ export default function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          {props.language === "Portuguese" ? "Claro" : "Light"}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          {props.language === "Portuguese" ? "Escuro" : "Dark"}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          {props.language === "Portuguese" ? "Sistema" : "System"}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
