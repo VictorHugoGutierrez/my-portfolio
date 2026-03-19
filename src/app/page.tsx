@@ -57,8 +57,8 @@ export default function Page() {
           language={portugueseVisible ? "Portuguese" : "English"}
           textTitle={
             portugueseVisible
-              ? "OLÁ, EU SOU O VICTOR HUGO"
-              : "HI, I'M VICTOR HUGO"
+              ? "OLÁ, EU SOU O VICTOR\u00A0HUGO"
+              : "HI, I'M VICTOR\u00A0HUGO"
           }
           textSubTitle={
             portugueseVisible ? "Desenvolvedor .NET" : ".NET Developer"

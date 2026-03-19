@@ -1,4 +1,4 @@
-"use client";
+"use function";
 
 import { useState, useEffect } from "react";
 import victorImage from "@/images/victor.jpeg";
@@ -50,39 +50,64 @@ export default function Welcome(props: WelcomeProps) {
 
   return (
     <div
-      className="flex min-h-screen flex-col items-center md:justify-center md:flex-row"
+      className="flex min-h-screen flex-col items-center md:justify-center md:flex-row px-4 overflow-hidden"
       id="startPage"
     >
-      <div className="flex h-1/2 my-28 md:my-0 items-center justify-center flex-col md:flex-row">
-        <Avatar className="md:mx-10 w-1/2 md:w-1/4 flex items-center justify-center">
-          <AvatarImage src={victorImage.src} className="rounded-xl" />
-          <AvatarFallback>Logo</AvatarFallback>
+      <div className="flex w-full max-w-6xl flex-col items-center justify-center md:flex-row my-28 md:my-0 gap-10">
+        <Avatar className="w-1/2 flex items-center justify-center md:w-1/3 flex-shrink-0">
+          <AvatarImage
+            src={victorImage.src}
+            className="rounded-xl shadow-2xl ring-4 ring-gray-900"
+          />
+          <AvatarFallback>Foto do Victor Hugo</AvatarFallback>
         </Avatar>
-        <div className="mx-10 my-4 md:my-auto md:text-start md:items-start text-center items-center flex flex-col">
-          <h1
-            id="typing-title"
-            className="flex text-3xl font-black lg:text-5xl"
-          >
-            {currentTitle}
-          </h1>
-          <div>
-            <p className="text-xl font-semibold lg:text-2xl text-blue-500">
-              {currentSubTitle}
-            </p>
+
+        <div className="mx-4 flex flex-col items-center text-center md:mx-0 md:my-auto md:items-start md:text-start md:flex-1">
+          <div className="relative w-full flex flex-col items-center md:items-start mb-4">
+            <div className="invisible pointer-events-none" aria-hidden="true">
+              <h1 className="text-3xl font-black lg:text-5xl mb-2">
+                {props.textTitle}
+              </h1>
+              <p className="text-xl font-semibold lg:text-2xl">
+                {props.textSubTitle}
+              </p>
+            </div>
+
+            <div className="absolute top-0 flex flex-col items-center md:items-start w-full">
+              <h1
+                id="typing-title"
+                className="text-3xl font-black lg:text-5xl mb-2 tracking-tight"
+              >
+                {currentTitle}
+                {currentTitleIndex < props.textTitle.length && (
+                  <span className="animate-pulse border-r-4 border-foreground ml-1"></span>
+                )}
+              </h1>
+              <p className="text-xl font-semibold lg:text-2xl text-blue-500">
+                {currentSubTitle}
+                {currentTitleIndex >= props.textTitle.length &&
+                  currentSubTitleIndex < props.textSubTitle.length && (
+                    <span className="animate-pulse border-r-4 border-blue-500 ml-1"></span>
+                  )}
+              </p>
+            </div>
           </div>
-          <div className="my-3 flex space-x-4 font-semibold">
-            <Button>
-              {props.language === "Portuguese" ? (
-                <a download href="/victorCVBR.pdf" target="_blank">
-                  Baixar CV
-                </a>
-              ) : (
-                <a download href="/victorCVEN.pdf" target="_blank">
-                  Download CV
-                </a>
-              )}
+
+          <div className="mt-4 flex space-x-4 font-semibold">
+            <Button asChild>
+              <a
+                download
+                href={
+                  props.language === "Portuguese"
+                    ? "/victorCVBR.pdf"
+                    : "/victorCVEN.pdf"
+                }
+                target="_blank"
+              >
+                {props.language === "Portuguese" ? "Baixar CV" : "Download CV"}
+              </a>
             </Button>
-            <Button>
+            <Button variant="outline" asChild>
               <a
                 href="https://api.whatsapp.com/send?phone=5519992168212"
                 target="_blank"
